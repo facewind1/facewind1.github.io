@@ -13,7 +13,7 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: url('img/background.png') no-repeat center center;
+    background: url('https://wangyk.oss-cn-chengdu.aliyuncs.com/aaa.jpeg?Expires=1763826121&OSSAccessKeyId=TMP.3KmwZaxnUrPnxxwXcT6rtBHfaU8CEZ8cebGMV24Taww28VrEYnSRYyyERZVp3cpLQSK17zEHTN9pJRYv9v6M6fWSPjd9vN&Signature=4zdP1JiY6kKoEoTY0aNT%2F8bC3%2BE%3D') no-repeat center center;
     background-size: cover;
 }
 
