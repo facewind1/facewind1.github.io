@@ -8,6 +8,10 @@
     font-family: 'Poppins', sans-serif;
 }
 
+html {
+  font-size: 16px; /* 或 62.5% → 1rem = 10px */
+}
+
 body {
     display: flex;
     justify-content: center;
@@ -19,22 +23,22 @@ body {
 }
 
 header {
-    position: fixed;
+    position: fixed;    /* 固定在页面顶部 */
     top: 0;
-    left: 0;
-    width: 100%;
-    padding: 20px 100px;
+    left: 0;            /* 贴着左边 */
+    width: 100%;        /* 宽度占满整个视口 */
+    padding: 20px 100px;/* 内边距 内部元素与该部件保持距离 */
     background: red;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 99;
+    display: flex;      /* 使用 Flexbox 布局 方便横向布局 */
+    justify-content: space-between;     /* 左右两端对齐，第一个元素靠左，最后一个元素靠右，中间的元素均匀分布 */
+    align-items: center;/* 垂直居中对齐 */
+    z-index: 99;        /* 确保 header 在其他内容之上 类似于层叠顺序 这里设置为第99层 */
 }
 
 .logo {
     color: #fff;
     font-size: 2em;
-    user-select: none;
+    user-select: none;  /* 禁止用户选中该文本 */
 }
 
 .navigation a {
