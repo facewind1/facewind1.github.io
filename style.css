@@ -28,7 +28,7 @@ header {
     left: 0;            /* 贴着左边 */
     width: 100%;        /* 宽度占满整个视口 */
     padding: 20px 100px;/* 内边距 内部元素与该部件保持距离 */
-    background: red;
+    /* background: red; */
     display: flex;      /* 使用 Flexbox 布局 方便横向布局 */
     justify-content: space-between;     /* 左右两端对齐，第一个元素靠左，最后一个元素靠右，中间的元素均匀分布 */
     align-items: center;/* 垂直居中对齐 */
