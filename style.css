@@ -123,6 +123,7 @@ header {
     height: 100%;
     padding: 0 40px 0 48px; /* 左右留出图标和标签空间 */
     font-size: 1rem;
+    font-weight: 600;
     border: 2px solid #ddd;
     border-radius: 6px;
     outline: none;
@@ -171,9 +172,61 @@ header {
     left: 48px;
     font-size: 0.85rem;
     color: #007bff;
-    background: white;
+    /* background: white; */
     padding: 0 4px;
 }
+
+.remember-forgot {
+    font-size: .9em;
+    color: #162938;
+    font-weight: 500;
+    margin: -15px 0 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.remember-forgot a {
+    color: #162938;
+    text-decoration: none;
+}
+
+.remember-forgot a:hover {
+    text-decoration: underline;
+}
+
+.login-register {
+    font-size: .9em;
+    color: #162938;
+    /* font-weight: 500; */
+    text-align: center;
+    margin-top: 20px;
+}
+
+.login-register p a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.login-register p a:hover {
+    text-decoration: underline;
+}
+
+.btn {
+    width: 100%;
+    height: 50px;
+    background: #172F42;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    color: #fff;
+    font-weight: 600;
+    transition: background 0.3s;
+}
+
 
 /* 6. 响应式优化（小屏适配） */
 @media (max-width: 480px) {

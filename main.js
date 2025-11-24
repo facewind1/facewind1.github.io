@@ -32,7 +32,7 @@ function getBackgroundImageUrl() {
     // 可选：其他本地开发环境（如 localhost:5050、file://）也使用本地图片
     // 如果你希望严格只对 127.0.0.1:5050 生效，可删除下面这一段
     if (hostname === 'localhost' || hostname === '127.0.0.1' || protocol === 'file:') {
-        return 'img/background.png';
+        return 'img/background.jpg';
     }
 
     // 默认 fallback（比如未知域名），可设为空或本地图
