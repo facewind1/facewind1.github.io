@@ -89,3 +89,112 @@ header {
     background: #fff;
     color: rgb(13, 39, 46);
 }
+
+
+
+/* 1. 表单容器：控制整体大小和居中 */
+.form-box.login {
+    width: 100%;
+    max-width: 400px; /* 限制最大宽度，避免在大屏上过宽 */
+    padding: 30px;      /* 内边距，增加内容与边框的距离 */
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 12px;
+    /* 效果：一个轻柔、向下投射的悬浮感阴影，常用于卡片式设计（如登录框、模态框）。 */
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.form-box h2 {
+    font-size: 1.8rem; /* 可调整标题大小 */
+    margin-bottom: 24px;    /* 该部件的断后行距，标题与输入框组的间距 */
+    text-align: center;
+    color: #333;
+}
+
+/* 2. 输入框组：统一高度和布局 */
+.input-box {
+    position: relative;
+    margin-bottom: 24px;
+    height: 50px; /* 控制输入框整体高度 */
+}
+
+/* 3. 输入框本身 */
+.input-box input {
+    width: 100%;
+    height: 100%;
+    padding: 0 40px 0 48px; /* 左右留出图标和标签空间 */
+    font-size: 1rem;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    outline: none;
+    background: transparent;
+    transition: border-color 0.3s;
+}
+
+.input-box input:focus,
+.input-box input:valid {
+    border-color: #007bff; /* 聚焦或有内容时变色 */
+}
+
+/* 4. 图标样式 */
+.input-box .icon {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    /* 如果仅使用 top: 50%; 来尝试垂直居中一个元素，元素的顶部会与父容器的垂直中线对齐，
+    但整个元素并不会真正位于垂直中央。这是因为元素自身还有一定的高度，所以实际上它会向下
+    偏移其自身高度的一半。transform: translateY(-50%);：此规则告诉浏览器将元素沿着
+     Y 轴向上移动其自身高度的 50%。通过这种方式，可以抵消由于设置 top: 50%; 导致的额
+     外偏移，从而实现真正的垂直居中。
+    */
+    font-size: 1.2rem; /* 控制图标大小 */
+    color: #777;
+    pointer-events: none; /* 防止点击图标干扰 input */
+}
+
+/* 5. 浮动标签 */
+.input-box label {
+    position: absolute;
+    top: 50%;
+    left: 48px;
+    transform: translateY(-50%);
+    font-size: 1rem;
+    color: #777;
+    pointer-events: none;   /* 防止点击标签干扰 input */
+    transition: all 0.3s ease;
+}
+
+/* 当 input 获得焦点 或 有内容时，标签上浮 */
+.input-box input:focus + label,
+.input-box input:valid + label {
+    top: -10px;
+    left: 48px;
+    font-size: 0.85rem;
+    color: #007bff;
+    background: white;
+    padding: 0 4px;
+}
+
+/* 6. 响应式优化（小屏适配） */
+@media (max-width: 480px) {
+    .form-box.login {
+        padding: 20px;
+        max-width: 90vw; /* 占屏幕 90% 宽度 */
+    }
+
+    .input-box {
+        height: 48px;
+    }
+
+    .input-box input {
+        padding-left: 44px;
+    }
+
+    .input-box .icon {
+        left: 12px;
+    }
+
+    .input-box label {
+        left: 44px;
+    }
+}
