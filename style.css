@@ -90,17 +90,48 @@ header {
     color: rgb(13, 39, 46);
 }
 
+.wrapper {
+    width: 400px;
+    /* min-height: 100vh; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* padding: 40px; */
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 12px;
+    /* 效果：一个轻柔、向下投射的悬浮感阴影，常用于卡片式设计（如登录框、模态框）。 */
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+}
 
+.wrapper .icon-close {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    font-size: 2rem;
+    width: 50px;
+    height: 50px;
+    color: #fff;
+    background: #162938;
+    cursor: pointer;
+    /* transition: color 0.3s; */
+    display: flex; /* 添加这一行 */
+    justify-content: center;
+    align-items: center;
+    border-bottom-left-radius: 20px;
+    z-index: 1;
+}
 
 /* 1. 表单容器：控制整体大小和居中 */
 .form-box.login {
     width: 100%;
     max-width: 400px; /* 限制最大宽度，避免在大屏上过宽 */
     padding: 30px;      /* 内边距，增加内容与边框的距离 */
-    background: rgba(255, 255, 255, 0.9);
-    border-radius: 12px;
+    /* background: rgba(255, 255, 255, 0.9); */
+    /* border-radius: 12px; */
     /* 效果：一个轻柔、向下投射的悬浮感阴影，常用于卡片式设计（如登录框、模态框）。 */
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    /* box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1); */
 }
 
 .form-box h2 {
