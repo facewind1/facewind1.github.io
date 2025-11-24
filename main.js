@@ -21,7 +21,7 @@ function getBackgroundImageUrl() {
 
     // 检查是否是授权域名（忽略端口，因为线上通常无端口或为 80/443）
     if (authorizedHosts.includes(hostname)) {
-        return 'https://wangyk.oss-cn-chengdu.aliyuncs.com/aaa.jpeg';
+        return 'https://wangyk.oss-cn-chengdu.aliyuncs.com/background.jpg';
     }
 
     // 特判：本地开发环境 http://127.0.0.1:5050
