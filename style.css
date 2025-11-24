@@ -92,7 +92,7 @@ header {
 
 .wrapper {
     width: 400px;
-    min-height: 480px; /* ✅ 防止塌陷 */
+    height: 480px; /* ✅ 防止塌陷 */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -101,6 +101,12 @@ header {
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
     position: relative;
     overflow: hidden; /* ✅ 防止滑动时内容外露 */
+    transform: scale(0);
+    transition: transform 0.5s ease, height 0.2s ease;
+}
+
+.wrapper.active-popup {
+    transform: scale(1);
 }
 
 .wrapper.active {
