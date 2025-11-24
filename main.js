@@ -59,9 +59,27 @@ function setBackgroundImage() {
     img.src = bgUrl;
 }
 
-// 等 DOM 加载完成后执行
-if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', setBackgroundImage);
-} else {
-    setBackgroundImage();
+function initAuthForms() {
+    const wrapper = document.querySelector('.wrapper');
+    const loginLink = document.querySelector('.login-link');
+    const registerLink = document.querySelector('.register-link');
+
+    if (registerLink) {
+        registerLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            wrapper?.classList.add('active');
+        });
+    }
+
+    if (loginLink) {
+        loginLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            wrapper?.classList.remove('active');
+        });
+    }
 }
+
+document.addEventListener('DOMContentLoaded', function () {
+    setBackgroundImage();
+    initAuthForms();
+});

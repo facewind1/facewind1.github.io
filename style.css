@@ -92,24 +92,25 @@ header {
 
 .wrapper {
     width: 400px;
-    /* min-height: 100vh; */
+    min-height: 480px; /* ✅ 防止塌陷 */
     display: flex;
     justify-content: center;
     align-items: center;
-    /* padding: 40px; */
-    background: rgba(255, 255, 255, 0.8);
+    background: rgba(255, 255, 255, 0.8); /* 现在能看见了 */
     border-radius: 12px;
-    /* 效果：一个轻柔、向下投射的悬浮感阴影，常用于卡片式设计（如登录框、模态框）。 */
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
     position: relative;
-    overflow: hidden;
+    overflow: hidden; /* ✅ 防止滑动时内容外露 */
+}
+
+.wrapper.active {
+    height: 520px;
 }
 
 .wrapper .icon-close {
     position: absolute;
-    top: 0px;
-    right: 0px;
-    font-size: 2rem;
+    top: 0;
+    right: 0;
     width: 50px;
     height: 50px;
     color: #fff;
@@ -123,16 +124,30 @@ header {
     z-index: 1;
 }
 
-/* 1. 表单容器：控制整体大小和居中 */
-.form-box.login {
+.form-box {
+    position: absolute;
     width: 100%;
     max-width: 400px; /* 限制最大宽度，避免在大屏上过宽 */
-    padding: 30px;      /* 内边距，增加内容与边框的距离 */
-    /* background: rgba(255, 255, 255, 0.9); */
-    /* border-radius: 12px; */
-    /* 效果：一个轻柔、向下投射的悬浮感阴影，常用于卡片式设计（如登录框、模态框）。 */
-    /* box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1); */
+    padding: 30px;
+    transition: transform 0.18s ease; /* 👈 统一加在这里 */
 }
+
+/* 1. 表单容器：控制整体大小和居中 */
+.form-box.login {
+    transform: translateX(0);
+}
+
+.wrapper.active .form-box.login {
+    transform: translateX(-400px); /* 或 400px，看你方向 */
+} 
+
+.form-box.register {
+    transform: translateX(400px);
+}
+
+.wrapper.active .form-box.register {
+    transform: translateX(0);
+} 
 
 .form-box h2 {
     font-size: 1.8rem; /* 可调整标题大小 */
@@ -224,6 +239,13 @@ header {
 
 .remember-forgot a:hover {
     text-decoration: underline;
+}
+
+.agree-term {
+    font-size: .9em;
+    color: #162938;
+    font-weight: 500;
+    margin: -10px 0 20px;
 }
 
 .login-register {
